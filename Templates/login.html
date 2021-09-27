@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход</title>
+</head>
+<body>
+    <form action="" method="post">{% csrf_token %}
+        {{form.as_p}}
+        <!-- as_p отобразит элемент формы параграфом с новой строки -->
+        <button type="submit">Войти</button>
+    </form>
+
+</body>
+</html>

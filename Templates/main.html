@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Social network</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+<a href="logout">Выйти{{user.name}}</a>
+<p>{{ x }}</p>
+{% else %}
+<a href="register">Ригистрация</a>
+<a href="login">Войти</a>
+<p>{{ x }}</p>
+
+{% endif %}
+
+
+
+</body>
+</html>
