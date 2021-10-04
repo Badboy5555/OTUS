@@ -97,13 +97,23 @@ WSGI_APPLICATION = 'Social_network.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'DB1',
-        'USER': 'django_admin',
-        'PASSWORD': 'django_admin',
-        'HOST': 'localhost',
+        'NAME': 'dedt57692q87lv',
+        'USER': 'glbdvmynhmbhit',
+        'PASSWORD': '556ce3421483a80cbe7ea999947475bf7fa6de8eaa5159976901afe663fdcad1',
+        'HOST': 'ec2-3-248-103-75.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
  }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'DB1',
+#         'USER': 'django_admin',
+#         'PASSWORD': 'django_admin',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+#  }
 # DATABASES = {
 #     'default': {p
 #         'ENGINE': 'django.db.backends.mysql',
