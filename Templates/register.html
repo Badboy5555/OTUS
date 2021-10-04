@@ -1,13 +1,26 @@
 <!DOCTYPE html>
+{% load i18n %}
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Регистрация</title>
 </head>
 <body>
-    <form action="" method="post">{% csrf_token %}
+    <form action="" method="post" id="data">
+        {% csrf_token %}
         {{form.as_p}}
+        <p>Имя <input type="text" name="name">
+        <p>Фамилия <input type="text" name="surname">
+        <p>Возраст <input type="text" name="age">
+        <p>Пол <select name="sex">
+            <option value="male">Мужчина</option>
+            <option value="female">Женщина</option>
+        </select></p>
+        <p>Город <input type="text" name="city">
+        <p>Интересы <input type="text" name="interests">
+
+<p><button type="submit" form="data">Зарегистрироваться</button></p>
         <!-- as_p отобразит элемент формы параграфом с новой строки -->
-        <button type="submit">Зарегистрироваться</button>
     </form>
 
 </body>

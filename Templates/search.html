@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% block a %}
+    <title>Поиск</title>
+{% endblock %}
+{% block b %}
+<p></p>
+<form action="" method="post" id="data">
+    {% csrf_token %}
+    <p>Имя <input type="text" name="name"> Фамилия <input type="text" name="surname">
+        <button type="submit" form="data">Поиск</button></p>
+</form>
+    <tr><td></td></tr>
+
+<table>
+    {% if context_data == 'Ничего не найдено' %}
+        <tr><td>{{ context_data }}</td></tr>
+    {% else %}
+        {% for i in context_data %}
+    <tr><td>{{ i.1 }} {{ i.2 }} {{ i.3 }} {{ i.4 }} <a href="/anyuser?id={{i.0}}" target="_blank"> ></a></td></tr>
+        {% endfor %}
+    {% endif %}
+</table>
+{% endblock %}

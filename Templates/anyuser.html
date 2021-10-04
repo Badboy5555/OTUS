@@ -1,0 +1,19 @@
+{% extends "main.html" %}
+{% block a %}
+    <title>{{ name }} {{ surname }}</title>
+{% endblock %}
+{% block b %}
+<table>
+    <tr>
+        <td>{{name }} {{surname}}, {{age}}, {{city}}</td>
+        {% if pending.0 == 1 %}
+            <td> /Заявка в друзья отправлена/</a></td>
+        {% elif pending.0 == 0 %}
+            <td> / Вы дружите/</a></td>
+        {% elif not pending.0 %}
+            <td><a href="/anyuser?id={{id}}&user1_id={{user1_id}}"> Подружиться</a></td>
+        {% endif %}
+    </tr>
+    <tr><td>{{interests}}</td></tr>
+</table>
+{% endblock %}

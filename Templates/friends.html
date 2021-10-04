@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% block a %}
+    <title>Друзья</title>
+{% endblock %}
+{% block b %}
+<p></p>
+<tr><td><a href="/incomefriends/">Поступившие заявки</a></td> /
+    <td><a href="/outcomefriends/">Отправлненные заявки</a></td></tr>
+<p></p>
+{% block b1 %}
+<table>
+    {% if context_data == 'Ничего не найдено' %}
+        <tr><td>{{ context_data }}</td></tr>
+    {% else %}
+        {% for i in context_data %}
+    <tr><td>{{ i.1 }} {{ i.2 }} {{ i.3 }} {{ i.4 }} <a href="/anyuser?id={{i.0}}" target="_blank"> ></a></td>
+    <td><a href="/friends?user2_id={{i.0}}del"> Удалить</a></td>
+    </tr>
+        {% endfor %}
+    {% endif %}
+</table>
+{% endblock %}
+{% endblock %}
