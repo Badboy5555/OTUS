@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-86&vq)h053xzkr45=-q2j7w8y$69(h8gkwind$_z-!p2_b=ryz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['*activate']
+
 
 
 # Application definition
@@ -91,16 +92,27 @@ WSGI_APPLICATION = 'Social_network.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# 'allauth.account',
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'DB1',
-        'USER': 'root',
-        'PASSWORD': 'root',
+        'USER': 'django_admin',
+        'PASSWORD': 'django_admin',
         'HOST': 'localhost',
+        'PORT': '5432',
     }
  }
+# DATABASES = {
+#     'default': {p
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'DB1',
+#         'USER': 'root',
+#         'PASSWORD': 'root',
+#         'HOST': 'localhost',
+#     }
+#  }
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -108,6 +120,10 @@ DATABASES = {
 #     }
 # }
 
+import dj_database_url
+
+db_from_env = dj_database_url.config()
+DATABASES['defaulf'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
